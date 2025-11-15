@@ -233,6 +233,19 @@ switch (currentWeapon)
 
 *This gives variety and supports the combo-switch mechanic.*
 
+### Controls:
+
+UP -> Upward arrow
+
+DOWN -> Downward Arrow
+
+LEFT -> Left arrow
+
+RIGHT-> right arrow
+
+Link to the repository:
+
+SHOOTING: Space Bar.
 
 
 ## ✔ Summary
