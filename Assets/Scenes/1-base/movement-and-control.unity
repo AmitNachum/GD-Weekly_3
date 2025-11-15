@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485b64436e693c34dafda4520b2a5391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  PlayerHealth: {fileID: 0}
+  PlayerHealth: {fileID: 97342539}
 --- !u!50 &97342536
 Rigidbody2D:
   serializedVersion: 5
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   text: {fileID: 1508487843}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 97342539}
 --- !u!114 &97342539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   RightBound: 6
   BottomBound: -3
   checkInterval: 10
-  spawnProbability: 0.65
+  spawnProbability: 0.45
 --- !u!1 &1508487841
 GameObject:
   m_ObjectHideFlags: 0
