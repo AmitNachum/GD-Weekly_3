@@ -165,7 +165,7 @@ The player can unlock different weapons by pressing specific key sequences (like
 * The system listens to the last 3 pressed keys
 * If they match a known combo → weapon switches instantly
 
-### 🧩 Code Example (from `SwitchSystem.cs`)
+### 🧩 Code Example and Keys (from `SwitchSystem.cs`)
 
 ```csharp
 if (keyToWeapon.TryGetValue(combo, out weapon))
@@ -175,6 +175,12 @@ if (keyToWeapon.TryGetValue(combo, out weapon))
 }
 ```
 
+
+### Keys:
+    "abc" -> Blue Laser
+    "abf" -> Burst green Laser
+    "abd" -> Yellow Big Rocket
+    
 *Enables dynamic weapon switching without a UI.*
 
 ---
@@ -200,24 +206,7 @@ switch (currentWeapon)
 
 *This gives variety and supports the combo-switch mechanic.*
 
----
 
-## ⭐ Feature 9: Game Over Trigger
-
-Touching specific tagged objects ends the game.
-
-### 🧩 Code Example (from `GameOverOnTrigger2D.cs`)
-
-```csharp
-if (other.tag == triggeringTag && enabled)
-{
-    Application.Quit();
-}
-```
-
-*Ensures reliable and simple game-ending behavior.*
-
----
 
 ## ✔ Summary
 
@@ -228,8 +217,8 @@ This assignment includes significant improvements to player experience:
 * **Randomized power-up spawning**
 * **Combo-based weapon switching**
 * **Multi-weapon shooting mechanics**
-* **Full damage + game over pipeline**
+* **Full damage**
 
-Everything is modular, readable, and extendable for future stages.
+Link to itch.io:("Game's Link")[https://amit-and-gal.itch.io/spaceshipprototype]
 
-If you'd like, I can add UML diagrams, flowcharts, or inline comments inside each script.
+
