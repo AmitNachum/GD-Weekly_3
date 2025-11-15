@@ -4,13 +4,40 @@ This README summarizes all the features added in the current assignment and incl
 
 ---
 
-## ⭐ Feature 1: Exponential Acceleration Movement (From Previous Part)
+## ⭐ Feature 1(Not In the Assignment's Ideas List): Exponential Acceleration Movement
 
-*This was developed earlier and not included in these files, but forms the basis of the updated movement system.*
+*Instead of constant Movment, the Player's Movment gradually increase under the condition that one of the movement keys has been pressed.*
 
+### Code Example:
+```csharp
+
+ private void Update()
+ {
+     Vector2 moveDirection = move.ReadValue<Vector2>();
+
+     // Are we actually pressing a movement key?
+     isMoving = moveDirection.sqrMagnitude > 0.0001f;
+
+    if(!isMoving)
+     {
+         currentSpeed = initialSpeed;
+         rb.linearVelocity = Vector2.zero;
+         return;
+     }
+     // ✔ Correct way with Rigidbody2D: velocity = direction * speed
+
+     currentSpeed *= Mathf.Pow(gradualIncrease, Time.deltaTime);
+
+     currentSpeed = Mathf.Min(currentSpeed, maxSpeed);
+
+
+     rb.linearVelocity = moveDirection.normalized * currentSpeed;
+}
+```
+### - The main point here is to use rb.velocity instead of transform.position in order to include accurate physics and to combine the properties that the RigidBody2D component grants us.
 ---
 
-## ⭐ Feature 2: Heart Regeneration Based on Score
+## ⭐ Feature 2: Heart Regeneration Based on Score(Not In the Assignment's Ideas List)
 
 The player automatically regenerates 1 heart after reaching a certain score milestone (every **15 points**).
 
