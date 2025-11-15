@@ -97,6 +97,7 @@ public class ShootingScript : MonoBehaviour
             var b = Instantiate(burstPrefab, firePoint.position, rot);
             b.GetComponent<Rigidbody2D>().linearVelocity =
                 (Vector2)(rot * Vector3.up) * burstSpeed;
+
         }
     }
 }

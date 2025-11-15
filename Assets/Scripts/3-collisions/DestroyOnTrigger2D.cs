@@ -24,9 +24,11 @@ public class DestroyOnTrigger2D : MonoBehaviour {
             Destroy(this.gameObject);
             Destroy(other.gameObject);
             onHit?.Invoke();
+            if (tracker != null) {
+                tracker.AddScore(1);
+            }
         }
 
-        tracker.AddScore(1);
 
     }
 

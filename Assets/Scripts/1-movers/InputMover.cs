@@ -6,7 +6,12 @@ using UnityEngine.InputSystem;
  */
 public class InputMover: MonoBehaviour {
     [Tooltip("Speed of movement, in meters per second")]
-    [SerializeField] float speed = 10f;
+    [SerializeField] float initialSpeed = 0.91f;
+    [SerializeField] float gradualIncrease = 1.008f;
+    [SerializeField] float currentSpeed = 0.91f;
+
+    private bool isMoving = false;
+   
 
     [SerializeField] InputAction move = new InputAction(
         type: InputActionType.Value, expectedControlType: nameof(Vector2));
@@ -20,9 +25,29 @@ public class InputMover: MonoBehaviour {
     }
 
     void Update() {
+
+        if (move.IsPressed())
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        if (isMoving)
+        {
+            currentSpeed *= gradualIncrease;
+        }
+        else 
+        {
+            currentSpeed = initialSpeed;
+        }
         Vector2 moveDirection = move.ReadValue<Vector2>();
-        Vector3 movementVector = new Vector3(moveDirection.x, moveDirection.y, 0) * speed * Time.deltaTime;
+        Vector3 movementVector = new Vector3(moveDirection.x, moveDirection.y, 0) * currentSpeed * Time.deltaTime;
         transform.position += movementVector;
+        
+
         //transform.Translate(movementVector);
         // NOTE: "Translate(movementVector)" uses relative coordinates - 
         //       it moves the object in the coordinate system of the object itself.

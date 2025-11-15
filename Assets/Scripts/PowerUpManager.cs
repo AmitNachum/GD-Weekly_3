@@ -7,15 +7,16 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] private float LeftBound;
     [SerializeField] private float RightBound;
     [SerializeField] private float BottomBound;
-    [SerializeField] private float checkInterval = 5f;
+    [SerializeField] private float checkInterval = 10f;
+    [SerializeField][Range(0f, 1f)] private float spawnProbability = 0.65f;
     private float timer = 0f;
-    
+
 
     private void Update()
     {
         timer += Time.deltaTime;
 
-        if( timer > checkInterval)
+        if (timer > checkInterval)
         {
             timer = 0f;
             GeneratePosition();
@@ -25,18 +26,16 @@ public class PowerUpManager : MonoBehaviour
 
     private void GeneratePosition()
     {
-        bool[] distributedBooleans = { true, false, false, false, false, false, false, false, false, false };
 
-        int randomIndex = (int)Random.value % distributedBooleans.Length;
+        if (Random.value <= spawnProbability) 
+        { 
 
-        if (!distributedBooleans[randomIndex]) return;
+            float yPosition = Random.Range(TopBound, BottomBound);
+            float xPosition = Random.Range(LeftBound, RightBound);
+            SpawnShield(xPosition, yPosition);
 
-
-        float xPosition = Random.Range(LeftBound, RightBound);
-        float yPosition = Random.Range(TopBound, BottomBound);
-
-        SpawnShield(xPosition, yPosition);
-    }
+        } 
+}
 
 
     void SpawnShield(float x,float y)
@@ -44,9 +43,5 @@ public class PowerUpManager : MonoBehaviour
         Instantiate(ShieldPrefab,new Vector2(x,y),Quaternion.identity);
     }
 
-    [ContextMenu("OnClick")]
-    void onClick()
-    {
-        SpawnShield(2, 1);
-    }
+
 }

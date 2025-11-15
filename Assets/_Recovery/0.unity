@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 97342535}
   - component: {fileID: 97342537}
   - component: {fileID: 97342538}
-  - component: {fileID: 97342539}
   m_Layer: 0
   m_Name: PlayerSpaceship
   m_TagString: Player
@@ -156,9 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2454a46801363448e379a29dd6e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 1
-  gradualIncrease: 1.0555
-  currentSpeed: 1
+  speed: 10
   move:
     m_Name: Move
     m_Type: 0
@@ -417,7 +414,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485b64436e693c34dafda4520b2a5391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  PlayerHealth: {fileID: 0}
+  playerHealth: 3
+  hearts:
+  - {fileID: 1419248908}
+  - {fileID: 1637176312}
+  - {fileID: 682454520}
 --- !u!50 &97342536
 Rigidbody2D:
   serializedVersion: 5
@@ -470,23 +471,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   text: {fileID: 1508487843}
-  playerHealth: {fileID: 0}
---- !u!114 &97342539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97342529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b35e7ffeb1cd8848bd61cd1ed214f41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  hearts:
-  - {fileID: 1419248908}
-  - {fileID: 1637176312}
-  - {fileID: 682454520}
 --- !u!1 &103019657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,8 +989,7 @@ MonoBehaviour:
   LeftBound: -6
   RightBound: 6
   BottomBound: -3
-  checkInterval: 10
-  spawnProbability: 0.65
+  checkInterval: 5
 --- !u!1 &1508487841
 GameObject:
   m_ObjectHideFlags: 0
