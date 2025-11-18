@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] public static int playerHealth = 3;
     [SerializeField] private Image[] hearts;
+    
    public void TakeDamage()
     {
         if (playerHealth > 0)
