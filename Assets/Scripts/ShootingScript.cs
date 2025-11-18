@@ -48,7 +48,7 @@ public class ShootingScript : MonoBehaviour
     {
         rocketTimer -= Time.deltaTime;
 
-      
+
         if (switchSystem != null &&
             switchSystem.TryGetCombo(out Weapon newWeapon))
         {

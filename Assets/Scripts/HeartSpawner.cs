@@ -6,7 +6,7 @@ public class HeartSpawner : MonoBehaviour
     [SerializeField] private GameObject heartPrefab;
     [SerializeField] private float spawnInterval = 60.0f;
     private float timer = 0.0f;
-    [SerializeField] [Range(0,1)] private float spawnHealthProbability = 0.5f;
+    [SerializeField] [Range(0, 1)] private float spawnHealthProbability = 0.5f;
     private int maxHealth = 3;
     [SerializeField] private float upperBoundX = 7.0f;
     [SerializeField] private float lowerBoundX = -7.0f;
@@ -19,16 +19,16 @@ public class HeartSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer >= spawnInterval)
+        if (timer >= spawnInterval)
         {
             float xPos = Random.Range(lowerBoundX, upperBoundX);
-            float yPos = Random.Range(lowerBoundY,upperBoundY);
-            SpawnHeart(xPos,yPos);
+            float yPos = Random.Range(lowerBoundY, upperBoundY);
+            SpawnHeart(xPos, yPos);
             timer = 0.0f;
         }
     }
 
-    private void SpawnHeart(float x,float y)
+    private void SpawnHeart(float x, float y)
     {
 
         if (Random.value <= spawnHealthProbability && PlayerHealth.playerHealth < maxHealth)

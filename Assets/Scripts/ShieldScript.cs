@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShieldScript : MonoBehaviour
 {
-   public void SetActive(bool value)
+    public void SetActive(bool value)
     {
 
         var Shield = GameObject.FindWithTag("Shield");

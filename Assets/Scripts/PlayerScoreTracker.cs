@@ -13,7 +13,7 @@ public class PlayerScoreTracker : MonoBehaviour
 
     public void AddScore(int scoreToAdd)
     {
-        if( score % scoreToRegenerate == 0 && PlayerHealth.playerHealth < 3)
+        if (score % scoreToRegenerate == 0 && PlayerHealth.playerHealth < 3)
         {
             playerHealth.Regenerate();
         }
@@ -21,5 +21,5 @@ public class PlayerScoreTracker : MonoBehaviour
 
         text.text = score.ToString();
     }
-    
+
 }

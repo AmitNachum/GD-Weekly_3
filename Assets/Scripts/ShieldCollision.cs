@@ -10,14 +10,14 @@ public class ShieldCollision : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-       {
+        {
             if (!isShieldActive)
             {
                 Debug.Log("Shield hit!");
                 StartCoroutine(ActivateShield());
-                
+
             }
-            
+
         }
     }
 
@@ -25,7 +25,7 @@ public class ShieldCollision : MonoBehaviour
     {
         isShieldActive = true;
 
-        
+
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null) sr.enabled = false;
 
@@ -36,7 +36,7 @@ public class ShieldCollision : MonoBehaviour
 
         isShieldActive = false;
 
-        
+
         Destroy(gameObject);
     }
 

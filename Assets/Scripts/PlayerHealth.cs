@@ -7,8 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] public static int playerHealth = 3;
     [SerializeField] private Image[] hearts;
-    
-   public void TakeDamage()
+
+    public void TakeDamage()
     {
         if (playerHealth > 0)
         {
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Player defeated!");
             Destroy(gameObject);
-            
+
         }
     }
 

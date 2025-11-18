@@ -49,7 +49,7 @@ public class InputMover : MonoBehaviour
         // Are we actually pressing a movement key?
         isMoving = moveDirection.sqrMagnitude > 0.0001f;
 
-       if(!isMoving)
+        if (!isMoving)
         {
             currentSpeed = initialSpeed;
             rb.linearVelocity = Vector2.zero;
