@@ -259,6 +259,6 @@ This assignment includes significant improvements to player experience:
 * **Multi-weapon shooting mechanics**
 * **Full damage**
 
-Link to itch.io:["Game's Link"][https://amit-and-gal.itch.io/spaceshipprototype]
+Link to itch.io:["Game's Link"](https://amit-and-gal.itch.io/spaceshipprototype)
 
 
